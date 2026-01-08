@@ -7,8 +7,14 @@ import { generateRandomCard } from "./lib/generateRandomCard"
 import type { CardValue } from "./types/card"
 
 function App() {
-  const [cards, setCards] = useState<CardValue[]>([])
-  const [botCards, setBotCards] = useState<CardValue[]>([])
+  const [cards, setCards] = useState<CardValue[]>([
+    generateRandomCard(),
+    generateRandomCard(),
+  ])
+  const [botCards, setBotCards] = useState<CardValue[]>([
+    generateRandomCard(),
+    generateRandomCard(),
+  ])
   const [botTotal, setBotTotal] = useState<number>(0)
   const [total, setTotal] = useState<number>(0)
 
@@ -64,8 +70,8 @@ function App() {
           type="button"
           className="bg-neutral-200 w-32 p-2 rounded border shadow-sm shadow-neutral-300 hover:scale-105 transition-transform"
           onClick={() => {
-            setCards([])
-            setBotCards([])
+            setCards([generateRandomCard(), generateRandomCard()])
+            setBotCards([generateRandomCard(), generateRandomCard()])
           }}
         >
           Reset
